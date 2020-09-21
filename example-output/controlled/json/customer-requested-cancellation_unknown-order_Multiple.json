@@ -1,0 +1,179 @@
+{
+  "flow": {
+    "U": {
+      "request": {
+        "@context": "https://openactive.io/",
+        "@type": "Order",
+        "orderedItem": [
+          {
+            "@type": "OrderItem",
+            "@id": "https://localhost:5001/api/openbooking/orders/d3e32d39-715b-503b-a510-9ad459bf66a9#/orderedItems/1",
+            "orderItemStatus": "https://openactive.io/CustomerCancelled"
+          }
+        ]
+      },
+      "response": {
+        "body": {
+          "@context": "https://openactive.io/",
+          "@type": "UnknownOrderError",
+          "name": "The Booking System has no 'Order' matching the one requested.",
+          "statusCode": 404,
+          "description": "Order not found"
+        },
+        "responseTime": 17.499501,
+        "status": 404,
+        "statusMessage": "Not Found",
+        "headers": {
+          "connection": "close",
+          "date": "Mon, 21 Sep 2020 21:39:43 GMT",
+          "content-type": "application/vnd.openactive.booking+json; version=1",
+          "server": "Kestrel",
+          "content-length": "185"
+        }
+      }
+    },
+    "UnknownOrderError for Customer Requested Cancellation": {
+      "response": {
+        "specs": [
+          {
+            "ancestorTitles": [
+              "customer-requested-cancellation",
+              "unknown-order",
+              "Multiple",
+              "UnknownOrderError for Customer Requested Cancellation"
+            ],
+            "duration": 1,
+            "failureMessages": [],
+            "fullName": "customer-requested-cancellation unknown-order Multiple UnknownOrderError for Customer Requested Cancellation should return a(n) UnknownOrderError",
+            "location": null,
+            "numPassingAsserts": 0,
+            "status": "passed",
+            "title": "should return a(n) UnknownOrderError"
+          }
+        ]
+      }
+    }
+  },
+  "logs": [
+    {
+      "ancestorTitles": [
+        "customer-requested-cancellation",
+        "unknown-order",
+        "Multiple",
+        "UnknownOrderError for Customer Requested Cancellation"
+      ],
+      "title": "should return a(n) UnknownOrderError",
+      "fullName": "customer-requested-cancellation unknown-order ScheduledSession UnknownOrderError for Customer Requested Cancellation should return a(n) UnknownOrderError",
+      "type": "request",
+      "stage": "U",
+      "request": {
+        "method": "PATCH",
+        "url": "https://localhost:5001/api/openbooking/orders/d3e32d39-715b-503b-a510-9ad459bf66a9",
+        "jsonBody": {
+          "@context": "https://openactive.io/",
+          "@type": "Order",
+          "orderedItem": [
+            {
+              "@type": "OrderItem",
+              "@id": "https://localhost:5001/api/openbooking/orders/d3e32d39-715b-503b-a510-9ad459bf66a9#/orderedItems/1",
+              "orderItemStatus": "https://openactive.io/CustomerCancelled"
+            }
+          ]
+        },
+        "requestOptions": {
+          "headers": {
+            "Content-Type": "application/vnd.openactive.booking+json; version=1",
+            "X-OpenActive-Test-Client-Id": "test",
+            "X-OpenActive-Test-Seller-Id": "https://localhost:5001/api/identifiers/sellers/1"
+          },
+          "timeout": 10000
+        }
+      },
+      "isPending": false,
+      "duration": 0,
+      "response": {
+        "body": {
+          "@context": "https://openactive.io/",
+          "@type": "UnknownOrderError",
+          "name": "The Booking System has no 'Order' matching the one requested.",
+          "statusCode": 404,
+          "description": "Order not found"
+        },
+        "responseTime": 17.499501,
+        "status": 404,
+        "statusMessage": "Not Found",
+        "headers": {
+          "connection": "close",
+          "date": "Mon, 21 Sep 2020 21:39:43 GMT",
+          "content-type": "application/vnd.openactive.booking+json; version=1",
+          "server": "Kestrel",
+          "content-length": "185"
+        }
+      }
+    },
+    {
+      "type": "spec",
+      "ancestorTitles": [
+        "customer-requested-cancellation",
+        "unknown-order",
+        "Multiple",
+        "UnknownOrderError for Customer Requested Cancellation"
+      ],
+      "title": "should return a(n) UnknownOrderError",
+      "fullName": "customer-requested-cancellation unknown-order Multiple UnknownOrderError for Customer Requested Cancellation should return a(n) UnknownOrderError",
+      "spec": {
+        "ancestorTitles": [
+          "customer-requested-cancellation",
+          "unknown-order",
+          "Multiple",
+          "UnknownOrderError for Customer Requested Cancellation"
+        ],
+        "duration": 1,
+        "failureMessages": [],
+        "fullName": "customer-requested-cancellation unknown-order Multiple UnknownOrderError for Customer Requested Cancellation should return a(n) UnknownOrderError",
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "should return a(n) UnknownOrderError"
+      }
+    }
+  ],
+  "timestamp": "Mon Sep 21 2020 21:39:43 GMT+0000 (Coordinated Universal Time)",
+  "config": {
+    "testCategory": "cancellation",
+    "testFeature": "customer-requested-cancellation",
+    "testFeatureImplemented": true,
+    "testIdentifier": "unknown-order",
+    "testName": "Expect a UnknownOrderError for an Order that does not exist",
+    "testDescription": "Runs Order Cancellation for a non-existent Order (with a fictional UUID), expecting an UnknownOrderError error to be returned"
+  },
+  "implemented": true,
+  "testFileIdentifier": "customer-requested-cancellation unknown-order Multiple",
+  "suites": [
+    [
+      "customer-requested-cancellation",
+      "unknown-order",
+      "Multiple"
+    ],
+    [
+      "customer-requested-cancellation",
+      "unknown-order",
+      "Multiple",
+      "UnknownOrderError for Customer Requested Cancellation"
+    ]
+  ],
+  "title": "customer-requested-cancellation >> unknown-order (Multiple)",
+  "workingLog": "",
+  "specs": {
+    "customer-requested-cancellation,unknown-order,Multiple,UnknownOrderError for Customer Requested Cancellation": [
+      "should return a(n) UnknownOrderError"
+    ]
+  },
+  "description": "Runs Order Cancellation for a non-existent Order (with a fictional UUID), expecting an UnknownOrderError error to be returned",
+  "opportunityType": "Multiple",
+  "baseAncestorTitles": [
+    "customer-requested-cancellation",
+    "unknown-order",
+    "Multiple"
+  ]
+}
